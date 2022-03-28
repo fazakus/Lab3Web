@@ -181,4 +181,105 @@ Disini tabel akan saya modifikasi dengan mengatur <i>margin dan padding</i> deng
 Tampilan output :<br>
 ![Mengatur Margin & Padding](Pic/membuattable2.png)
 
-## 6. 
+## 6. Menggabungkan Sel Data
+Saya akan mencoba menggabungkan sel data secara vertikal menggunakan atribut <i>rowspan</i>. Berikut syntaxnya yang saya rubah :<br>
+```
+<table border="1" cellpadding="4" cellspacing="0"> 
+    <thead> 
+        <tr> 
+            <th>No.</th> 
+            <th>Fakultas</th> 
+            <th>Program Studi</th> 
+        </tr> 
+    </thead> 
+    <tbody> 
+        <tr> 
+            <td>1.</td> 
+            <td rowspan="3">Teknik</td> 
+            <td>Teknik Informatika</td> 
+        </tr> 
+        <tr>    
+            <td>2.</td> 
+            <td>Teknik Industri</td> 
+        </tr> 
+        <tr> 
+            <td>3.</td> 
+            <td>Teknik Lingkungan</td> 
+        </tr> 
+    </tbody> 
+</table>
+```
+Karena kolom <b>Teknik</b> saya gabungkan / merge dalam excel, maka penulisan <b>Teknik</b> pada syntax pada kedua fakultas dihilangkan.<br>
+Tampilannya menjadi seperti berikut :<br>
+![Merge Cell Vertical](Pic/mergecell.png)<br>
+
+## 7. Membuat Form
+
+Untuk membuat form, disini saya akan membuat file baru dengan nama <b>lab3_form.html</b> seperti berikut :<br>
+```
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>HTML Lanjutan</title> 
+</head> 
+<body> 
+    <header> 
+        <h1>Membuat Form</h1> 
+    </header> 
+</body> 
+</html>
+```
+
+Lalu tambahkan syntax untuk membuat form sederhana.<br>
+```
+<form action="proses.php" method="post"> 
+    <fieldset> 
+        <legend>Data Pelanggan</legend> 
+        <p> 
+            <label for="nama">Nama</label> 
+            <input type="text" id="nama" name="nama"> </p> 
+            <p> <label for="alamat">Alamat</label> 
+                <textarea id="alamat" name="alamat" cols="20" rows="3"></textarea> 
+            </p> 
+            <p> <label>Jenis Kelamin</label> 
+                <input id="jk_l" type="radio" name="kelamin" value="L" /><label for="jk_l">Laki-laki</label> 
+                <input id="jk_p" type="radio" name="kelamin" value="P" /><label for="jk_p">Perempuan</label>
+            </p> 
+            <p>
+                <input type="submit" value="Login"></p> </fieldset> 
+</form>
+```
+Berikut tampilannya :<br>
+![Form Sederhana](Pic/form1.png)<br>
+
+## 8. Menambahkan Style Form
+
+Untuk merubah tampilan agar menarik, maka akan saya rubah dengan menambahkan <b>CSS</b>. Maka syntax saya tambah <b>CSS</b> menjadi seperti berikut :<br>
+```
+<style> 
+    form p > label { 
+        display: inline-block; 
+        width: 100px; 
+    } 
+    form input[type="text"], form textarea { 
+        border: 1px solid #197a43; 
+    } 
+    form input[type="submit"] { 
+        border: 1px solid #197a43; 
+        background-color: #197a43; 
+        color: #ffffff; 
+        font-weight: bold; 
+        padding: 5px 15px; } 
+</style>
+```
+
+Tampilan output :<br>
+![Form 2](Pic/form2.png)<br>
+
+<hr>
+
+## Pertanyaan dan Tugas
+
+1. Buatlah form yang menampilkan <b><i>dropdown</b></i> menu dan <b><i>listbox</b></i> dengan <i>multiple selection.</i>
