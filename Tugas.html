@@ -5,44 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La~Galleta</title>
+
+    <style>
+        form p > label{
+            display: inline-block;
+            width: 150px;
+        }
+        form input[type="text"], form textarea, form select{
+            border: 1px solid #000000;
+            width: 250px;
+        }
+        form input[type="submit"]{
+            border: 1px solid #000000;
+            background-color: #000000;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 5px 15px;
+        }
+        form input[type="reset"]{
+            border: 1px solid #b82839;
+            background-color: #b82839;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 5px 15px;
+        }
+    </style>
 </head>
 <body>
-background-color: black
-    <header> 
-        <h1>Membuat Form</h1> 
-    </header> 
+    
+    <header style="text-align: center; color: #95a124; font-family: Arial, Helvetica, sans-serif;">
+        <table align="center">
+            <tr>
+                <td><img src="Pic/Lagalleta.png" width="94px" height="84px"></td>
+                <td><h1>Form Pemesanan</h1></td>
+            </tr>
+        </table>
+        
+    </header>
+
+    <form action="proses.php" method="post" style="background-color: #c1ced6">
+        <fieldset>
+            <legend style="background-color: #e1e5e8;"><b>Data Pelanggan</b></legend>
+            <p>
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan Nama">
+            </p>
+            <p>
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" name="alamat" cols="20" rows="3" placeholder="Masukkan Alamat Pelanggan"></textarea>
+            </p>
+            <p>
+                <label>Jenis Pembayaran</label>
+                <input type="radio" id="jk_l" name="pay" value="L">
+                    <label for="jk_l">COD</label>
+                <input type="radio" id="jk_p" name="pay" value="P">
+                    <label for="jk_p">Transfer</label>
+            </p>
+            <p>
+                <label for="produk">Produk yang dipesan</label>
+                <select name="produk" id="produk">
+                    <option selected>Pilih Produk</option>
+                    <option value="BMP">Banana Milk Pastry</option>
+                    <option value="ZS">Zuppa Soup</option>
+                    <option value="BT">Brownies Tape</option>
+                    <option value="BF">Brownies Fuji Coklat</option>
+                    <option value="PS">Pie Susu</option>
+                </select>
+            </p>
+            <p>
+                <input type="reset" value="Reset"> 
+                <input type="submit" value="Pesan">
+            </p>
+        </fieldset>
+    </form>
+
 </body>
 </html>
-
-<form action="proses.php" method="post"> 
-    <fieldset> 
-        <legend>Data Pelanggan</legend> 
-        <p> 
-            <label for="nama">Nama</label> 
-            <input type="text" id="nama" name="nama"> </p> 
-            <p> <label for="alamat">Alamat</label> 
-                <textarea id="alamat" name="alamat" cols="20" rows="3"></textarea> 
-            </p> 
-            <p> <label>Jenis Kelamin</label> 
-                <input id="jk_l" type="radio" name="kelamin" value="L" /><label for="jk_l">Laki-laki</label> 
-                <input id="jk_p" type="radio" name="kelamin" value="P" /><label for="jk_p">Perempuan</label>
-            </p> 
-            <p>
-                <input type="submit" value="Login"></p> </fieldset> 
-</form>
-
-<style> 
-    form p > label { 
-        display: inline-block; 
-        width: 100px; 
-    } 
-    form input[type="text"], form textarea { 
-        border: 1px solid #197a43; 
-    } 
-    form input[type="submit"] { 
-        border: 1px solid #197a43; 
-        background-color: #197a43; 
-        color: #ffffff; 
-        font-weight: bold; 
-        padding: 5px 15px; } 
-</style>
